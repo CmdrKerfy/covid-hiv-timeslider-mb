@@ -63,7 +63,7 @@
     <div class="map-overlay-inner">
         <div id="legend" class="legend">
             <div class="bar"></div>
-            <div>Magnitude (m)</div>
+            <div>Staff Capacity</div>
         </div>
     </div>
 </div>
@@ -75,7 +75,7 @@
         container: 'map',
         style: 'mapbox://styles/kerfy/ck8rlmv1i076d1jo5tadjiomv',
         center: [0.771877, 37.740658],
-        zoom: 7
+        zoom: 1
     });
 
     var weeks = [
@@ -107,7 +107,7 @@
         // Here we're using d3 to help us make the ajax request but you can use
         // Any request method (library or otherwise) you wish.
         d3.json(
-            'https://raw.githubusercontent.com/CmdrKerfy/covid-hiv-timeslider-mb/master/geojson/KenyaAdmins.json',
+            'https://raw.githubusercontent.com/CmdrKerfy/covid-hiv-timeslider-mb/master/geojson/DocProj.json',
             function(err, data) {
                 if (err) throw err;
 
@@ -119,7 +119,7 @@
                 });
 
                 map.addSource('doc', {
-                    'type': 'geojson',
+                    'type': 'json',
                     data: data
                 });
 
